@@ -19,4 +19,4 @@ function divideSaldo(valor) {
 console.log(adicionaSaldo(300));
 console.log(subtraiSaldo(50));
 console.log(multiplicaSaldo(3));
-console.log(divideSaldo(5));
+console.log(divideSaldo(5)); 
