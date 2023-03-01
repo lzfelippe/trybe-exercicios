@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fc0284;
+    font-family: 'Courier New', Courier, monospace
+}
+
+/* Colocando borda ao passar o mouse nos itens da lista */
+
+div:hover {
+  border: 5px solid black;
+}
+
+div:nth-of-type(1) {
+  background-color: #e1ecd6;
+}
+
+div:nth-of-type(2) {
+  background-color: #aee1d3;
+}
+
+div:nth-of-type(3) {
+  background-color: #7cd7cf;
+}
+
+div:nth-of-type(4) {
+  background-color: #49cccc;
+}
+
+div:nth-of-type(5) {
+  background-color: #16c1c8;
+}
+
+/* personalizando cada H3 */
+
+div:nth-of-type(1) > h3 {
+  color: green;
+}
+
+div:nth-of-type(2) > h3 {
+  font-family: monospace;
+}
+
+div:nth-of-type(3) > h3 {
+  font-size: 30px;
+}
+
+div:nth-of-type(4) > h3 {
+  font-style: oblique;
+}
+
+div:nth-of-type(5) > h3 {
+  color: greenyellow;
+}
+
+/* Terceira div ser maior*/
+
+div:nth-of-type(3) {
+  height: 100px;
+}
+
+/* Tags impares h3 texto itálico */
+
+div:nth-child(odd) h3 {
+  font-style: italic;
+}
