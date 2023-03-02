@@ -6,7 +6,8 @@ let menor = numbers[0];
 let contImpar = 0;
 let novoArray = [];
 
-/* for (let index = 0; index < numbers.length; index += 1) {
+//Varias paradinhas
+for (let index = 0; index < numbers.length; index += 1) {
     console.log(numbers[index]);
     soma += numbers[index];
     media = soma / numbers.length;
@@ -19,17 +20,18 @@ if (media > 20) {
     console.log('Valor maior que 20');
 } else {
     console.log('Valor menor que 20');
-}  */
+}
 
-/* for (index = 1; index < numbers.length; index += 1) {
+//Descobrir maior valor do array
+for (index = 1; index < numbers.length; index += 1) {
     if (numbers[index] > maior) {
         maior = numbers[index];
     }
-} 
+}
+console.log(maior);
 
-console.log(maior); */
-
-/* for (let index = 0; index < numbers.length; index += 1) {
+// Conta quantos valores ÍMPARES tem no array 
+for (let index = 0; index < numbers.length; index += 1) {
     if (numbers[index] % 2 !== 0) {
         contImpar += 1;
     }
@@ -37,24 +39,30 @@ console.log(maior); */
 
 if (contImpar === 0) {
     console.log('Nenhum valor ímpar encontrado');
-} else {   
+} else {
     console.log(`São ${contImpar} números ÍMPARES`);
 }
- */
 
-/* for (index = 1; index < numbers.length; index += 1) {
+
+// descobre o menor valor do array
+for (index = 1; index < numbers.length; index += 1) {
     if (numbers[index] < menor) {
         menor = numbers[index];
     }
-} 
-
-console.log(menor); */
-
-/* for (let index = 1; index <= 25; index += 1) {
-    novoArray.push(index);
 }
 
-console.log(novoArray); */
+console.log(menor);
+
+//cria um array de 1 a 25
+for (let index = 1; index <= 25; index += 1) {
+    novoArray.push(index);
+}
+console.log(novoArray);
+
+// imprime resultado da divisão de cada item do novoArray
+for (let index = 0; index < novoArray.length; index += 1) {
+    console.log('a divisão de ' + novoArray[index] + ' por 2 é: ' + (novoArray[index] / 2));
+}
 
 
 
