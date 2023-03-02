@@ -1,9 +1,10 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let media = 0;
 let soma = 0;
-let maior = numbers[0]
-let menor = numbers[0]
+let maior = numbers[0];
+let menor = numbers[0];
 let contImpar = 0;
+let novoArray = [];
 
 /* for (let index = 0; index < numbers.length; index += 1) {
     console.log(numbers[index]);
@@ -41,12 +42,19 @@ if (contImpar === 0) {
 }
  */
 
-for (index = 1; index < numbers.length; index += 1) {
+/* for (index = 1; index < numbers.length; index += 1) {
     if (numbers[index] < menor) {
         menor = numbers[index];
     }
 } 
 
-console.log(menor);
+console.log(menor); */
+
+/* for (let index = 1; index <= 25; index += 1) {
+    novoArray.push(index);
+}
+
+console.log(novoArray); */
+
 
 
