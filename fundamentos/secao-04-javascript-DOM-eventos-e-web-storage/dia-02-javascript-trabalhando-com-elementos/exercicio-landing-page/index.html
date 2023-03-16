@@ -64,18 +64,57 @@
     document.body.appendChild(newTitle);
 
 //Adicione a tag main com a classe main-content como filho da tag body;
-    const 
 
+    const main = document.createElement('main');
+    main.className = 'main-content';
+    document.body.appendChild(main); 
 
 //Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+    const section = document.createElement('section');
+    section.className = 'center-content';
+    main.appendChild(section);
+
 //Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = 'Bem vindo a nossa pagina!';
+    section.appendChild(paragraph);
+
 //Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+    const sectionLeft = document.createElement('section');
+    sectionLeft.className = 'left-content';
+    main.appendChild(sectionLeft);
+
 //Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+    const sectionRight = document.createElement('section');
+    sectionRight.className = 'right-content';
+    main.appendChild(sectionRight);
+
 //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do section criado no passo 5;
-//Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, … como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+    const smallImage = document.createElement('img');
+    smallImage.src = 'https://picsum.photos/200';
+    smallImage.className = 'small-image';
+    sectionLeft.appendChild(smallImage);
+
+
+//Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três,
+// … como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+    const extensiveNumber = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+      
+    for (let index = 0; index < extensiveNumber.length; index += 1) {
+        let numbers = extensiveNumber[index];
+        const listNumbers = document.createElement('ul');
+        listNumbers.innerText = numbers
+        sectionRight.appendChild(listNumbers)
+      }
+    
 //Adicione 3 tags h3, todas sendo filhas do main criado no passo 2.
-        const body = document.getElementById('body');
-        body.document.createElement('h1');
+
+for (let index = 1; index <= 3; index += 1) {
+  const h3Tags = document.createElement('h3');
+  h3Tags.innerHTML = `tag h3 numero ${index}`
+  main.appendChild(h3Tags)
+} 
 
 
     </script>
