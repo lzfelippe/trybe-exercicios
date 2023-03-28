@@ -14,12 +14,14 @@ const promo = [
 
 const button = document.querySelector('#send-button');
 
+
 button.addEventListener('click', () => {
     const name = document.querySelector('#name-id').value;
     const number = document.querySelector('#number-id').value;
 
     showPromo(name, number);
 });
+
 
 const showPromo = (name, number) => {
     const firstText = document.querySelector('#text-initial');
@@ -28,6 +30,7 @@ const showPromo = (name, number) => {
     try {
         checkName(name);
         checkNumber(parseInt(number));
+        checkValidRange(number);
         const productObject = checkPromo(number);
 
         firstText.innerHTML = `Boas-vindas, ${name}!`;
@@ -62,4 +65,11 @@ const checkPromo = (number) => {
       }
     }
   }
+
+// Quarta parte
+const checkValidRange = (number) => {
+    if (number < 1 || number > 10) {
+        throw new Error('É necessário digitar um número entre 1 e 10');
+    }
+}
 
