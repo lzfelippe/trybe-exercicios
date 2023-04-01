@@ -42,9 +42,9 @@ const showPromo = (name, number) => {
 }
 
 const checkName = (name) => {
-    let letters = /[aA-zZ]+/;
+    let letters = /[aA-zZ]+/; 
 
-    if (!name.match(letters)) {
+    if (!name.match(letters)) { //quando name não tem o formato indicado
         throw new Error('É necessário digitar um nome válido');
     }
 }
@@ -66,6 +66,7 @@ const checkPromo = (number) => {
     }
   }
 
+  
 // Quarta parte
 const checkValidRange = (number) => {
     if (number < 1 || number > 10) {
