@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+}
+    ul, ol, li {
+        list-style: none;
+    }
+
+  /*PEQUENO*/
+  @media (max-width: 600px) {
+    body {
+        background-color: antiquewhite;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        display:flex;
+        justify-content: space-between;
+        padding: 10px;
+        list-style: inside;
+    }
+
+    li {
+        display: inline;
+        padding: 5px;
+        font-style: bold;
+    }
+
+    h2 {
+        justify-content: center;
+    }
+
+  }
+
+
+  /*MEDIO*/
+  @media (min-width: 768px) {
+    
+  }
+
+
+  /*GRANDE*/
+  @media (min-width: 1200px) {
+    
+  }

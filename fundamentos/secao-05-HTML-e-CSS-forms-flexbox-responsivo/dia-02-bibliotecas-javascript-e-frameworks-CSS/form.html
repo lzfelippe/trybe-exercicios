@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1 id="title">Formulário Trybe Travel</h1>
+  <form action=""
+    method="get"
+    id="main-form">
+
+    <label for="fullName">
+      <p>Nome Completo:</p>
+      <input type="text"
+        id="fullName"
+        min="10"
+        max="40">
+    </label>
+    <br><br>
+    <label for="email">
+      <p>E-mail:</p>
+      <input type="email"
+        id="email"
+        min="10"
+        max="50"
+        maxlength="50">
+    </label>
+    <br><br>
+    <p>Destino Preferido:</p>
+
+    <div id="container-radio">
+        <div class="form-check">
+        <label class="form-check-label" for="destinations">
+          <input class="form-check-input" type="radio"
+            name="destinations"
+            id=""> Cidade
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="destinations">
+            <input class="form-check-input" type="radio"
+              name="destinations"
+              id=""> Campo
+        </div>
+        <div class="form-check">
+        <label class="form-check-label" for="destinations">
+          <input class="form-check-input" type="radio"
+            name="destinations"
+            id=""> Praia
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="destinations">
+            <input class="form-check-input" type="radio"
+              name="destinations"
+              id=""> Montanha
+        </div>
+    </div>
+
+    <label for="">
+      <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTip?</p>
+      <textarea id="question"
+        cols="40"
+        rows="5"
+        maxlength="500"></textarea>
+    </label>
+    <br>
+    <label for="date">
+      <p>Qual a melhor data para realizar sua viagem?</p>
+      <input type="date"
+        id="date">
+    </label>
+
+    <label for="promo">
+      <p>Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</p>
+      <input class="form-check-input" type="checkbox"
+        id="promo" >
+    </label>
+
+    <label for="">
+      <p>Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</p>
+      <input class="form-check-input" type="checkbox"
+        id="agreement">
+    </label>
+    <br><br>
+    <label for="submit-btn">
+      <button type="submit"
+        id="submit-btn" class="btn btn-secondary btn-lg">Enviar</button>
+    </label>
+    <label for="clear-btn">
+      <button type="reset"
+        id="clear-btn" class="btn btn-secondary btn-lg">Limpar</button>
+    </label>
+
+  </form>
+  <script>
+    const submit = document.getElementById('submit-btn');
+
+    function noResetSubmit(event) {
+      event.preventDefault();
+    }
+
+    submit.addEventListener('click', noResetSubmit);
+  </script>
+</body>
+
+</html>
