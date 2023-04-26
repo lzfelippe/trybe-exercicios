@@ -6,7 +6,7 @@ const preEl = document.querySelector('pre');
 
 buttonEl.addEventListener('click', handleClick);
 
-async function handleClick() {
+export async function handleClick() {
   const cep = inputEl.value;
 
   try {
