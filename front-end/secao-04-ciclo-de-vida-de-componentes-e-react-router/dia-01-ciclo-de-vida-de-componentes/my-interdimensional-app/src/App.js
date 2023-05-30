@@ -9,7 +9,7 @@ class App extends Component {
       characters: [],
     };
   }
-
+  // fa a requisição a API
   fetchCharacters = () => {
     fetch('https://rickandmortyapi.com/api/character')
       .then(response => response.json())
@@ -17,7 +17,7 @@ class App extends Component {
         this.setState({ characters: data.results })
       })
   }
-
+  // roda a requisição ao terminar de renderizar a aplicação
   componentDidMount() {
     this.fetchCharacters();
   }
