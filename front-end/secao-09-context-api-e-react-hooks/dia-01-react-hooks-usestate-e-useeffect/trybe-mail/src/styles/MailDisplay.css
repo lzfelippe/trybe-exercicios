@@ -1,0 +1,17 @@
+.message {
+    display: flex;
+    font-size: 1.4em;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    border-radius: 5px;
+    justify-content: space-between;
+  }
+
+  .message-read {
+    color: #ccc;
+  }
+
+  button:nth-child(2) {
+    margin-right: 10px;
+  }
