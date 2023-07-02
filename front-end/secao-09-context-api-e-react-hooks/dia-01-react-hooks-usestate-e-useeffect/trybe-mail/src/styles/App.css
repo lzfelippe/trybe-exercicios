@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3AD288;
+  height: 120px;
+  padding: 20px;
+  color: white;
+  border-bottom: solid 2px black;
+}
+
+section {
+  padding: 20px;
+}
+
+button {
+  background-color: #3AD288;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:nth-child(1) {
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #3AD288;
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
