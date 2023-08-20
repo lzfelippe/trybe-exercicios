@@ -1,0 +1,24 @@
+USE sakila;
+
+# 01
+SELECT IF(15 MOD 2 = 0, 'Par', 'Ímpar') AS 'Par ou Ímpar';
+-- DIV E MOD
+# 02
+SELECT 220 DIV 12;
+
+# 03 
+SELECT 220 MOD 12;
+
+-- RAND, ROUND , FLOOR, CEIL
+
+# 04
+SELECT ROUND(15 + (RAND() * 5));
+
+# 05
+SELECT ROUND(15.7515971, 5);
+
+# 06
+SELECT FLOOR(39.494);
+
+# 07
+SELECT CEIL(85.234);

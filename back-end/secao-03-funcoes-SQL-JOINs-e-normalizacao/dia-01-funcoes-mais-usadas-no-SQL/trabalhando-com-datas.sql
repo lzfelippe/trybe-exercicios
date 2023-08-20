@@ -1,0 +1,9 @@
+USE sakila;
+
+-- DATES
+
+# 08 
+SELECT DATEDIFF('2030-01-20', DATE(NOW()));
+
+# 09 
+SELECT TIMEDIFF('10:25:45', '11:00:00');
