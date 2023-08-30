@@ -1,0 +1,3 @@
+cria container:
+    docker container run -it debian:stable-slim
+
