@@ -1,12 +1,16 @@
 {
   "name": "simpsons",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "readFile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "read": "node readFile.js",
+    "findId": "node findById.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
 }
