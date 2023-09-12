@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "main": "readFile.js",
   "scripts": {
-    "read": "node readFile.js",
-    "findId": "node findById.js"
+    "6a": "node readFile.js",
+    "6b": "node findById.js",
+    "6c": "node removeSimpsons.js",
+    "6d": "node simpsonFamily.js",
+    "6e": "node addNelson.js",
+    "6f": "node addMaggie.js"
   },
   "keywords": [],
   "author": "",
