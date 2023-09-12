@@ -30,6 +30,11 @@ services:
     # Informa ao docker, para que o container node seja iniciado após o container database
     depends_on:
       - "database"
+    # Pode usar o atributo env_file para especificar o caminho para 
+      # um arquivo que contém as variáveis de ambiente, nesse caso,
+      # o arquivo .env
+    env_file:
+      - .env
 
   database:
     image: mysql:8.0.29
