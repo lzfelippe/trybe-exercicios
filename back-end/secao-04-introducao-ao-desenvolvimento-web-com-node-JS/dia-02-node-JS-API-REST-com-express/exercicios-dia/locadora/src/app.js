@@ -6,12 +6,13 @@ const app = express();
 app.use(express.json());
 
 app.get('/movies/:id', async (req, res) => {
-    const { id } = req.params;
     try {
-        const movies = await readDataById(id);
-        res.status(200).json(movies);
+        const { id } = req.params;
+        const movie = await readDataById(id);
+        if (!movie) res.status(404).json({ message: 'Movie not found' });
+        res.status(200).json(movie);
     } catch (error) {
-        res.status(404).json({ message: 'Movie not found' });
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 });
 
