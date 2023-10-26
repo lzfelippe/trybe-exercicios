@@ -10,8 +10,6 @@ app.get('/user', User.getAll);
 
 app.get('/user/:id', User.getById);
 
-app.get('/user/search/:id', User.getByIdAndEmail);
-
 app.post('/user', User.createUser);
 
 app.put('/user/:id', User.updateUser);

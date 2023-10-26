@@ -1,6 +1,6 @@
 const UserService = require('../services/user.service');
 
-const error500Message = 'Ocorreu um erro';
+const error500Message = 'Algo deu errado';
 
 const getAll = async (_req, res) => {
   try {
@@ -12,79 +12,59 @@ const getAll = async (_req, res) => {
   }
 };
 
-  const getById = async (req, res) => {
-    try {
-      const { id } = req.params;
-      const user = await UserService.getById(id);
-  
-      if (!user) return res.status(404).json({ message: 'Usuário não encontrado' });
-  
-      return res.status(200).json(user);
-    } catch (e) {
-      console.log(e.message);
-      res.status(500).json({ message: error500Message });
-    }
-  };
+/* Esta função usa o método findByPk do Sequelize para buscar um usuário pelo id.
+Equivale a fazer a query: SELECT * FROM Users WHERE id=? */
+const getById = async (id) => {
+  const user = await User.findByPk(id);
 
-  const getByIdAndEmail = async (req, res) => {
-    try {
-      const { id } = req.params;
-      const { email } = req.query;
-      const user = await UserService.getByIdAndEmail(id, email);
-  
-      if (!user) return res.status(404).json({ message: 'Usuário não encontrado' });
-  
-      return res.status(200).json(user);
-    } catch (e) {
-      console.log(e.message);
-      res.status(500).json({ message: error500Message });
-    }
-  };
+  return user;
+};
 
-  const createUser = async (req, res) => {
-    try {
-      const { fullName, email } = req.body;
-      const newUser = await UserService.createUser(fullName, email);
-  
-      return res.status(201).json(newUser);
-    } catch (e) {
-      console.log(e.message);
-      res.status(500).json({ message: error500Message });
-    }
-  };
+/* Esta função usa o método findOne do Sequelize combinado 
+com a chave where para buscar por id e email. 
+Equivale a fazer a query: SELECT * FROM Users WHERE id=? AND email=? */
+const getByIdAndEmail = async (id, email) => {
+  const user = await User.findOne({ where: { id, email } });
 
-  const updateUser = async (req, res) => {
-    try {
-      const { fullName, email } = req.body;
-      const { id } = req.params;
-      const updatedUser = await UserService.updateUser(id, fullName, email);
-  
-      if (!updatedUser) return res.status(404).json({ message: 'Usuário não encontrado' });
-  
-      return res.status(200).json({ message: 'Usuário atualizado com sucesso!' });
-    } catch (e) {
-      console.log(e.message);
-      res.status(500).json({ message: error500Message });
-    }
-  };
+  return user;
+};
 
-  const deleteUser = async (req, res) => {
-    try {
-      const { id } = req.params;
-      await UserService.deleteUser(id);
-  
-      return res.status(200).json({ message: 'Usuário excluído com sucesso!' });
-    } catch (e) {
-      console.log(e.message);
-      res.status(500).json({ message: error500Message });
-    }
-  };
+/* Esta função usa o método create do Sequelize para inserir um objeto na tabela Users
+Equivale a fazer a query: INSERT INTO Users (full_name, email) VALUES (?, ?) */
+const createUser = async (fullName, email) => {
+  const newUser = await User.create({ fullName, email });
+
+  return newUser;
+};
+
+/* Esta função usa o método update do Sequelize para atualizar um objeto na tabela Users
+Equivale a fazer a query: UPDATE Users SET full_name=?, email=? WHERE id=?*/
+const updateUser = async (id, fullName, email) => {
+  const [updatedUser] = await User.update(
+    { fullName, email },
+    { where: { id } },
+  );
+
+  console.log(updatedUser); // confira o que é retornado quando o user com o id é ou não encontrado;
+  return updatedUser;
+};
+
+/* Esta função usa o método destroy do Sequelize para remover um objeto na tabela Users
+Equivale a fazer a query: DELETE FROM Users WHERE id=?*/
+const deleteUser = async (id) => {
+  const user = await User.destroy(
+    { where: { id } },
+  );
+
+  console.log(user); // confira o que é retornado quando o user com o id é ou não encontrado;
+  return user;
+};
 
 module.exports = {
-    getAll,
-    getById,
-    getByIdAndEmail,
-    createUser,
-    updateUser,
-    deleteUser,
+  getAll,
+  getById,
+  getByIdAndEmail,
+  createUser,
+  updateUser,
+  deleteUser,
 };
