@@ -1,22 +1,19 @@
 const express = require('express');
-const BooksController = require('./controllers/books.controller');
+const BooksController = require('../src/database/controllers/books.controller');
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!!!')
-});
-
 app.get('/books', BooksController.getAll);
 
 app.get('/books/:id', BooksController.getById);
 
-app.post('/books', BooksController.create);
+app.post('/books', BooksController.createBook);
 
-app.put('/books/:id', BooksController.update);
+app.put('/books/:id', BooksController.updateBook);
 
-app.delete('/books/id', BooksController.remove);
+app.delete('/books/:id', BooksController.deleteBook);
 
 module.exports = app;
+

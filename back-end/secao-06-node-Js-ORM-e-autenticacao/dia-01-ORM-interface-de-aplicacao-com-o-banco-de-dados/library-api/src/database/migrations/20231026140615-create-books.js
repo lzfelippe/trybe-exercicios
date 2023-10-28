@@ -4,35 +4,35 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Books', {
       id: {
-          allowNull: false,
-          autoIncrement: true,
-          primaryKey: true,
-          type: Sequelize.INTEGER
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
       },
       title: {
-          type: Sequelize.STRING,
-          allowNull: false,
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       author: {
-        type: Sequelize.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       pageQuantity: {
-        type: Sequelize.INTEGER,
         allowNull: true,
+        type: Sequelize.INTEGER,
       },
-      cratedAt: {
-        type: Sequelize.DATE,
+      createdAt: {
         allowNull: false,
+        type: Sequelize.DATE,
       },
       updatedAt: {
-          allowNull: false,
-          type: Sequelize.DATE
+        allowNull: false,
+        type: Sequelize.DATE,
       },
     });
   },
 
   down: (queryInterface, _Sequelize) => {
     return queryInterface.dropTable('Books');
-  }
+  },
 };
