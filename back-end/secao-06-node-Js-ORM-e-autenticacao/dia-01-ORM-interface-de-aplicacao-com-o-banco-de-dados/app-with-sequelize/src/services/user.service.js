@@ -42,6 +42,7 @@ const updateUser = async (id, fullName, email) => {
     );
   console.log(updatedUser); // confira o que é retornado quando o user com o id é ou não encontrado;
   return updatedUser;
+
 };
 
 /* Esta função usa o método destroy do Sequelize para remover um objeto na tabela Users
