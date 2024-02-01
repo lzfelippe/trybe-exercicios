@@ -1,3 +1,5 @@
+import math
+
 # ex01
 
 
@@ -43,7 +45,6 @@ def bigger_name(list):
 bigger_name(["José", "Lucas", "Nádia", "Felipe", "Cairo", "Joana"])
 
 # ex05
-import math
 
 
 def calculate_ink(wall_size):

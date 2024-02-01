@@ -1,13 +1,15 @@
-def tipe_of_triangle(a, b, c):
-    if a + b > c and a + c > b and b + c > a:
-        if a == b and b == c:
-            return "equilátero"
-        elif a == b or b == c or a == c:
-            return "isósceles"
+def calculate_fuel(liters, fuelType):
+    if fuelType == "A":
+        if liters <= 20:
+            total = (liters * 1.9) - (liters * 1.9 * 0.03)
         else:
-            return "escaleno"
-    else:
-        return "não é um triângulo"
+            total = (liters * 1.9) - (liters * 1.9 * 0.05)
+    elif fuelType == "G":
+        if liters <= 20:
+            total = (liters * 2.5) - (liters * 2.5 * 0.04)
+        else:
+            total = (liters * 2.5) - (liters * 2.5 * 0.06)
+    return print(total)
 
 
-print(tipe_of_triangle(2, 2, 3))
+calculate_fuel(10, "A")
