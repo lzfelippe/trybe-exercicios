@@ -1,0 +1,10 @@
+casas
+carro
+moto
+bicicleta
+caminhão
+ônibus
+avião
+helicoptero
+trem
+metrô
