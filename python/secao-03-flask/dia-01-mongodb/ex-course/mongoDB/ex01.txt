@@ -1,0 +1,6 @@
+ex01 - 
+    db.places.find({'address.country':'Spain'}).sort({'_id':1})
+
+ex02 - 
+    db.places.find({'address.country':'United States'}).count()
+
